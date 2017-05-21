@@ -3,19 +3,30 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Speakers</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <img [src]="item.thumb"/>
+      <ion-card-content>
+        <ion-card-title>
+          {{item.title}}
+          </ion-card-title>
+        <p>
+          {{item.note}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+    <!--<button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-left></ion-icon>
       {{item.title}}
       <div class="item-note" item-right>
         {{item.note}}
       </div>
-    </button>
+    </button>-->
   </ion-list>
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
