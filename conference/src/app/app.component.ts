@@ -6,6 +6,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+// Services
+import { SpeakerService } from '../services/speaker.service';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -14,7 +17,7 @@ export class WebSummit {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, param?: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -22,7 +25,14 @@ export class WebSummit {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Speakers', component: ListPage }
+      { title: 'Conferences', component: HomePage },
+      { title: 'Attendees', component: HomePage },
+      { title: 'Speakers', component: ListPage, param: SpeakerService },
+      { title: 'Statups', component: HomePage },
+      { title: 'Investors', component: HomePage },
+      { title: 'Hotels', component: HomePage },
+      { title: 'Reviews', component: HomePage },
+      { title: 'News', component: HomePage },
     ];
 
   }
@@ -39,6 +49,6 @@ export class WebSummit {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component, {pageType: page.param} );
   }
 }

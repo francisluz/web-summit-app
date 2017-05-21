@@ -6,6 +6,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { WebSummit } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { DetailPage } from '../pages/detail/detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,7 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     WebSummit,
     HomePage,
-    ListPage
+    ListPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     WebSummit,
     HomePage,
-    ListPage
+    ListPage,
+    DetailPage
   ],
   providers: [
     StatusBar,

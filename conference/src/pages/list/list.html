@@ -9,7 +9,14 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-thumbnail item-left>
+        <img [src]="item.thumb">
+      </ion-thumbnail>
+      <h2>{{item.title}}</h2>
+      <p>{{item.note}}</p>
+    </button>
+    <!--<ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
       <img [src]="item.thumb"/>
       <ion-card-content>
         <ion-card-title>
@@ -19,7 +26,7 @@
           {{item.note}}
         </p>
       </ion-card-content>
-    </ion-card>
+    </ion-card>-->
     <!--<button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-left></ion-icon>
       {{item.title}}
