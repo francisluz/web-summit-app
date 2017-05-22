@@ -6,7 +6,9 @@ The idea of this project is to build an End-to-End solution using Javascript, su
 
  - **Server**: NodeJS, Express, Heroku.
  - **Mobile**: Ionic Framework, Angular, Android and iOS.
-
+ 
+### Architecture Overview - Blueprint
+![Blueprint architecture](https://raw.githubusercontent.com/francisluz/web-summit-app/master/Web-Summit-Blueprint.png?raw=true)
 
 # Set up the project
 
