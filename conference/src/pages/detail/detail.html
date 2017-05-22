@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detail</ion-title>
+    <ion-title>{{item.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,5 +16,6 @@
 <ion-content padding>
   <img [src]="item.thumb" alt="">
   <h1>{{item.title}}</h1>
-  <p>{{item.note}}</p>
+  <h3>{{item.job}}</h3>
+  <p>{{item.description}}</p>
 </ion-content>

@@ -3,18 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Speakers</ion-title>
+    <ion-title>{{metaData.title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <div class="card-background-page">
+      <div class="cover">
+        <h1 padding class="card-title">{{metaData.subtitle}}</h1>
+      </div>
+  </div>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-thumbnail item-left>
         <img [src]="item.thumb">
       </ion-thumbnail>
       <h2>{{item.title}}</h2>
-      <p>{{item.note}}</p>
+      <p>{{item.job}}</p>
     </button>
     <!--<ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
       <img [src]="item.thumb"/>

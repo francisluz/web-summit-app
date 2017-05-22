@@ -1,3 +1,35 @@
 page-home {
+    h2 {
+        color: #EE3268;
+    }
 
+    ion-grid{
+        background-color: #ededed;
+    }
+    .card-background-page {
+        
+        .cover {
+            background-image: url("../assets/images/lisbon-background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px;
+        }
+
+        .card-title {
+            // position: absolute;
+            top: 36%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: #fff;
+        }
+    }
 }

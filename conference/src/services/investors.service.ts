@@ -2,16 +2,23 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from "rxjs/Observable";
 import { DataService } from "./data.service";
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 
 @Injectable()
-export class SpeakerService implements DataService {
+export class InvestorsService implements DataService {
 
-    apiUrl: string = 'https://1daycache.websummit.com/v1/conferences/companies/madmin/lists/top-50-previously-at-our-events/info?limit=15';
+    apiUrl: string = 'https://desolate-wave-28351.herokuapp.com/api/investors';
     
     constructor(private http: Http){
+    }
+
+    getMetaData(){
+        return {
+            title: 'Investors',
+            subtitle: 'Previous Investors That Joined Us'
+        }
     }
 
     getData(): Observable<any[]> {
@@ -21,7 +28,7 @@ export class SpeakerService implements DataService {
     }
 
     private extractData(res: Response) {
-        let data = res.json().people;
+        let data = res.json().dataitem;
         return data || { };
     }
 

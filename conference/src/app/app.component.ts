@@ -7,7 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
 // Services
-import { SpeakerService } from '../services/speaker.service';
+import { AttendeesService } from '../services/attendees.service';
+import { SpeakersService } from '../services/speakers.service';
+import { StartupsService } from '../services/startups.service';
+import { InvestorsService } from '../services/investors.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,14 +28,10 @@ export class WebSummit {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Conferences', component: HomePage },
-      { title: 'Attendees', component: HomePage },
-      { title: 'Speakers', component: ListPage, param: SpeakerService },
-      { title: 'Statups', component: HomePage },
-      { title: 'Investors', component: HomePage },
-      { title: 'Hotels', component: HomePage },
-      { title: 'Reviews', component: HomePage },
-      { title: 'News', component: HomePage },
+      { title: 'Attendees', component: ListPage, param: AttendeesService },
+      { title: 'Speakers', component: ListPage, param: SpeakersService },
+      { title: 'Statups', component: ListPage, param: StartupsService },
+      { title: 'Investors', component: ListPage, param: InvestorsService }
     ];
 
   }
@@ -49,6 +48,6 @@ export class WebSummit {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component, {pageType: page.param} );
+    this.nav.setRoot(page.component, {serviceType: page.param} );
   }
 }

@@ -15,15 +15,14 @@ import { DataService } from '../../services/data.service';
 export class ListPage {
   selectedItem: any;
   icons: string[];
-  items: Array<{title: string, note: string, thumb: string}>;
+  items: Array<{title: string, job: string, thumb: string, description: string}>;
   serviceType: any;
+  metaData: {title: string, subtitle: string};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
     private speakerService: DataService) {
     // If we navigated to this page, we will have an item available as a nav param
-    console.log(navParams.get('pageType'));
-
-    this.serviceType = navParams.get('pageType');
+    this.serviceType = navParams.get('serviceType');
 
     this.selectedItem = navParams.get('item');
 
@@ -31,13 +30,16 @@ export class ListPage {
 
     speakerService = new this.serviceType(http);
 
+    this.metaData = speakerService.getMetaData();
+
     speakerService.getData()
-    .subscribe(people => {
-      people.forEach(item => {
+    .subscribe(data => {
+      data.forEach(item => {
         this.items.push({
-          title: item.full_name,
-          note: item.job_title,
-          thumb: item.medium_image
+          title: item.name,
+          job: item.job_title,
+          thumb: item.avatar_url,
+          description: item.description
         })
       });
     });

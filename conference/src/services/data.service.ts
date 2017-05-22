@@ -6,4 +6,11 @@ export class DataService {
     getData(): Observable<any[]>{
         return null;
     }
+
+    getMetaData(): any {
+        return {
+            title: 'List',
+            subtitle: 'Sub text.'
+        };
+    }
 }
