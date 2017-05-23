@@ -25,7 +25,7 @@ Ionic View makes it easy to share your app with clients and testers without usin
 ### Step 2 - Add the App ID
 ![Adding new App ID](https://raw.githubusercontent.com/francisluz/web-summit-app/master/IMG_1581.JPG)
 
-To adding *App ID* that you may already have, tap in follow icons highlighted at the image above.
+You can view using the **App ID: fb7c9864** , tap in following icons highlighted at the image above.
 
 
 ## Run in a local env
